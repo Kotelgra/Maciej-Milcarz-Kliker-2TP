@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Kliker</title>
+    <link rel="stylesheet" href="klikr.css">
+</head>
+<body>
+    <div id="przycisk">
+        <button id="przycisk2" onclick="">Kliknij mnie</button>
+        <button id="przycisk3" onclick="">Kliknij mnie</button>
+        <h1>Twój wynik jest równy:</h1>
+        <h2 id="h2"></h2>
+        <h3 id="h3"></h3>
+    </div>
+    <script>
+        const butto = document.getElementById("przycisk2");
+        const butto2 = document.getElementById("przycisk3");
+        const elm = document.getElementById("h2");
+        const a = document.getElementById("h3");
+        let count = 0;
+
+        
+    function kaczkad() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+        butto.addEventListener('click', function() {
+            count++;
+            elm.textContent = count;
+
+                   butto.style.backgroundColor = kaczkad();
+
+            if (count === 10) {
+                a.textContent = "Gratulacje, masz 10 punktów! 🎉";
+                setTimeout(() => {
+                    a.textContent = "";
+                }, 2000); 
+            }
+            if (count === 50) {
+                a.textContent = "Wow, 50 punktów, jesteś mistrzem klikora! 🏆";
+                setTimeout(() => {
+                    a.textContent = "";
+                }, 2000); 
+            }
+            if (count === 100) {
+                a.textContent = "Wow, 100 punktów, jesteś królem klikora! 🏆";
+                setTimeout(() => {
+                    a.textContent = "";
+                }, 2000); 
+            }
+        });
+                butto2.addEventListener('click', function() {
+            count--;
+            elm.textContent = count;
+                    butto2.style.backgroundColor = kaczkad();
+                })
+    </script>
+</body>
+</html>

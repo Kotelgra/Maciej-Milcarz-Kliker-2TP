@@ -1,0 +1,18 @@
+body{
+    background-color: blue;
+}
+#przycisk{
+    margin-top: 20%;
+    text-align: center;
+    font-family:monospace;
+}
+#przycisk2{
+    width: 180px;
+    height: 60px;
+    border-radius: 20px;
+}
+#przycisk3{
+    width: 180px;
+    height: 60px;
+    border-radius: 20px;
+}
