@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="klikr.css">
 </head>
 <body>
+    <div id="wt1">
+        <h1>LEADERBOARD:</h1>
+        <table>
+            <ol>
+                <li id="wyn1"></li>
+                <li id="wyn2"></li>
+                <li id="wyn3"></li>
+            </ol>
+        </table>
+        <input type="text" id="nick">
+        <button onclick="Zapiszdotabeli()">Zapisz wynik</button>
+    </div>
     <div id="przycisk">
         <button id="przycisk2" onclick="">Kliknij mnie</button>
         <button id="przycisk3" onclick="">Kliknij mnie</button>
@@ -19,7 +31,12 @@
         const butto2 = document.getElementById("przycisk3");
         const elm = document.getElementById("h2");
         const a = document.getElementById("h3");
+        let nic = document.getElementById("nick")
+        let wy1 = document.getElementById("wyn1")
+        let wy2 = document.getElementById("wyn2")
+        let wy3 = document.getElementById("wyn3")
         let count = 0;
+
 
         
     function kaczkad() {
@@ -31,6 +48,7 @@
         return color;
     }
         butto.addEventListener('click', function() {
+            const nic2 = nic.value
             count++;
             elm.textContent = count;
 
@@ -60,6 +78,15 @@
             elm.textContent = count;
                     butto2.style.backgroundColor = kaczkad();
                 })
+        function Zapiszdotabeli(){
+        if (count > 0 || count < 0 && nic.value.trim() !== "") {
+            wy1.innerHTML = nic.value + " Wynik: " + count;
+        }
+        if (count == 0 && nic.value.trim() !== "") {
+            wy1.innerHTML = nic.value + " Wynik: " + count;
+        }
+        }
+        
     </script>
 </body>
 </html>
